@@ -1,0 +1,60 @@
+create database ksacademy;
+use ksacademy;
+
+SET SQL_SAFE_UPDATES = 0;
+
+-- Scalar Functions	
+	-- String-case(UPPER,LOWER,INITCAP)
+    
+    
+	-- String-(CONCAT,SUBSTR,INSTR,REPLACE,REVERSE,LTRIM,RTRIM)
+	-- Date-(SYSDATE,ADD_MONTHS,EXTRACT,LAST_DAY,MONTHS_BETWEEN,NEXT_DAY)
+	-- Numeric-(TRUNC,CEIL,ROUND)
+	-- Conversion(TO_CHAR,TO_NUMBER,TO_DATE)
+	-- NULL(NVL,NVL2)
+-- Sequence	
+	-- Create Sequence
+    
+    
+-- DDL	
+	-- Create
+    create table ks_students(St_No int, st_name varchar(20), gender varchar(5), DOJ date, st_mobile int, p_mobile int, 
+    st_reference varchar(15), location varchar(20), hostel_required varchar(10));
+    
+    select * from ks_students;
+    
+    
+	-- Drop Table
+        drop table ks_students;
+        
+	-- Alter Table
+    -- Add column - course
+     alter table ks_students add course varchar(20);
+      alter table ks_students add c_fees int;
+    -- Drop column -course
+     alter table ks_students drop column course;
+     
+	-- Truncate
+     truncate table ks_students;
+     create table ks_students(St_No int, st_name varchar(20), gender varchar(5), DOJ date, st_mobile int, p_mobile int, 
+    st_reference varchar(15), location varchar(20), hostel_required varchar(10));
+
+-- DML	
+	-- Insert
+    insert into ks_students(St_no,st_name, gender, DOJ, st_mobile, p_mobile, st_reference,location, hostel_required)
+                                values (1,'Abinaya', 'F','2020-04-06', 985875, 985873, 'Website','Thiruvanamalai','YES');
+        insert into ks_students values (2,'deeparasan', 'M','2020-04-20', 954875, 995873, 'Relatives','Trichy','YES',25000);
+         insert into ks_students values (3,'pooja', 'F','2020-04-14', 959875, 994873, 'Pamphlet','Chennai','No',25000);
+       
+	-- Update
+    update ks_students set c_fees = 25000 where st_name = 'Abinaya';
+    update ks_students set c_fees = 25 where st_name ='Abinaya';
+	-- Delete
+    delete from ks_students where st_name ='Abinaya';
+-- DQL	
+	Select * from ks_students;
+	-- Alias
+    Select c_fees as course_fees from ks_students;
+-- TCL	
+	-- Commit
+    commit;
