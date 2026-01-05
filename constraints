@@ -1,0 +1,4 @@
+create table ks_hostel(Hos_no int primary key, st_name varchar(20), gender varchar(5), st_mobile int, p_mobile int, St_No int, FOREIGN KEY(St_No) REFERENCES ks_students(St_No));
+ 
+ insert into ks_hostel (Hos_no,st_name, gender, st_mobile, p_mobile)
+                                values (110,'Abinaya', 'F', 985875, 985873);
